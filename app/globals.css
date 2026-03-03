@@ -1,2 +1,14 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark,
+    synthwave;
+}
+
+@media print {
+  @page {
+    size: letter landscape;
+    margin: 0;
+  }
+}
