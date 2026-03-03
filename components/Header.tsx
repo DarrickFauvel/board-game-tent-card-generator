@@ -1,13 +1,17 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="navbar bg-base-300 px-4 shadow-sm">
       <div className="flex-1 @container">
-        <span className="text-xl font-bold">
-          <span className="hidden @sm:inline">
-            🎲 Board Game Tent Card Generator
+        <Link href="/">
+          <span className="text-xl font-bold">
+            <span className="hidden @sm:inline">
+              🎲 Board Game Tent Card Generator
+            </span>
+            <span className="@sm:hidden">🎲 BGTCG</span>
           </span>
-          <span className="@sm:hidden">🎲 BGTCG</span>
-        </span>
+        </Link>
       </div>
 
       <div className="dropdown dropdown-end">

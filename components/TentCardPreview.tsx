@@ -18,7 +18,11 @@ export default function TentCardPreview({ data, onBack }: TentCardPreviewProps) 
           ← Back
         </button>
         <button className="btn btn-primary" onClick={() => {
-          localStorage.setItem("tentCard", JSON.stringify(data));
+          try {
+            const saved = localStorage.getItem("tentCards");
+            const cards = saved ? (JSON.parse(saved) as typeof data[]) : [];
+            localStorage.setItem("tentCards", JSON.stringify([...cards, data]));
+          } catch {}
           window.print();
           onBack();
         }}>
